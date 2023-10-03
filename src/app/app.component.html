@@ -1,0 +1,49 @@
+<div class="name">
+  <div class="container">
+    <div class="row">
+    <img src="assets/logo.jpeg" alt="" class="logo">
+    <h1 class="headline">חברים לחיים</h1>
+    </div>
+  </div>
+</div>
+<div class="container mt-3">
+  <div>שלום {{ user.firstName }}</div>
+  <nav *ngIf="isLoggedIn" class="navbar navbar-expand-lg navbar-light">
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin" routerLinkActive="active" *ngIf="user?.isAdmin">דף מנהל</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">דאשבורד</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/edit-user" routerLinkActive="active">עריכת משתמש</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/drives" routerLinkActive="active">נסיעות</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/adoption" routerLinkActive="active">צור בקשת אימוץ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/matchmake-form" routerLinkActive="active">מצא התאמה</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/all-dogs" routerLinkActive="active">כל הכלבים</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login" routerLinkActive="active" (click)="logOut()">התנתק</a>
+        </li>
+      </ul>
+      <div *ngIf="!isLoggedIn">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login">התחברות</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

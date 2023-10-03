@@ -1,0 +1,23 @@
+<div class="container">
+  <h2 class="headline">כלבים שצריכים חיסון</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let dog of dogsToVaccinate">
+        <div class="card">
+          <img class="card-img-top dog-image" [src]="getDogImagePath(dog.breed)" alt="{{ dog.name }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ dog.name }}</h5>
+            <p class="card-subtitle mb-2 text-muted">{{ dog.breed }}</p>
+            <p class="card-text">תאריך חיסון אחרון: {{ dog.lastVaccination | date:'dd/MM/y' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card random-fact-card">
+    <div class="card-body">
+      <h4 class="card-title">עובדה כלבית רנדומלית:</h4>
+      <p class="card-text">{{ randomFact }}</p>
+    </div>
+  </div>
+</div>

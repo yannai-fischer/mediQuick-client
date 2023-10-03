@@ -1,0 +1,136 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+
+@font-face {
+  font-family: 'AmaticSC-Regular';
+  src: url('/assets/AmaticSC-Regular.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans-Medium';
+  src: url('/assets/open-sans-medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+div, button {
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+  font-family: 'OpenSans-Medium', sans-serif;
+}
+
+.btn {
+  margin-left: 0.5%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: white;
+  background-color: black;
+}
+
+dashboard:root {
+  --primary-color: #d8b830;
+  --secondary-color: #f8b830;
+}
+
+dashboard.navbar {
+  background-color: black;
+  color: white;
+}
+
+.nav-link {
+  color: white;
+}
+
+.nav-link:hover {
+  background-color: #c86830;
+}
+
+.nav-link.active {
+  background-color: #f8b830;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.text-danger {
+  color: red;
+}
+
+dashboard.card {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color:black;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card-body {
+  padding: 10px;
+  color:black;
+}
+
+.card-text {
+  margin-bottom: 5px;
+}
+
+.headline {
+  font-size: 72px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+}
+
+h2, h3 {
+  color: #f8b830 !important;
+  font-family: 'AmaticSC-Regular', sans-serif;
+  font-weight: bolder;
+}
+
+h1 {
+  font-family: 'AmaticSC-Regular', sans-serif;
+  font-weight: bolder;
+}
+
+.btn {
+  margin-right: 5px;
+}
+
+.dog-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  max-width: 123px;
+  max-height: 123px;
+}

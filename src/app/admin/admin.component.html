@@ -1,0 +1,74 @@
+<h2>דף מנהל</h2>
+
+<h3>בקשות אימוץ ממתינות</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6" *ngFor="let application of pendingAdoptionApplications">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ getDogName(application.dogId) }}</h5>
+          <p class="card-text">מגיש הבקשה: {{ getRelevantUserFullName(application.userId) }}</p>
+          <p class="card-text">תאריך אימוץ: {{ application.adoptionDate | date:'dd/MM/yyyy' }}</p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-success" (click)="approveAdoptionApplication(application.dogId)">אשר בקשת אימוץ</button>
+          <button class="btn btn-danger" (click)="rejectAdoptionApplication(application.id ?? -1)">דחה בקשת אימוץ</button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="pendingAdoptionApplications.length == 0">אין בקשות פתוחות כרגע...</div>
+  </div>
+</div>
+
+<h3>הוסף כלב חדש</h3>
+<form [formGroup]="addDogForm" (ngSubmit)="addDog()">
+  <div class="form-group">
+    <label for="name">שם</label>
+    <input type="text" id="name" formControlName="name" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label for="colour">צבע</label>
+    <input type="text" id="colour" formControlName="colour" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="breed">גזע</label>
+    <select id="breed" formControlName="breed" class="form-control">
+      <option *ngFor="let breed of BREEDS" [value]="breed">{{ breed }}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <input type="radio" id="male" formControlName="gender" name="gender" value="male" required>
+    <label for="male">זכר</label>
+  </div>
+  <div class="form-group">
+    <input type="radio" id="female" formControlName="gender" name="gender" value="female" required>
+    <label for="female">נקבה</label>
+  </div>
+  <div class="form-group">
+    <label for="birthday">תאריך לידה</label>
+    <input type="date" id="birthday" formControlName="birthday" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="dateOfArrival">תאריך הגעה</label>
+    <input type="datetime-local" id="dateOfArrival" name="dateOfArrival" formControlName="dateOfArrival" required class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="lastVaccination">תאריך חיסון אחרון</label>
+    <input type="date" id="lastVaccination" formControlName="lastVaccination" class="form-control">
+  </div>
+  <div class="form-group">
+    <input type="checkbox" id="hasBeenNeutered" formControlName="hasBeenNeutered">
+    <label for="hasBeenNeutered">מעוקרת/מסורס</label>
+  </div>
+  <div class="form-group">
+    <label for="sicknesses">מחלות</label>
+    <input type="text" id="sicknesses" formControlName="sicknesses" class="form-control" placeholder="הוסף מחלה">
+    <button type="button" (click)="addSickness()" class="btn btn-outline-primary">הוסף</button>
+  </div>
+  <ul *ngFor="let sickness of dogSicknesses" class="sicknesses-list">
+    <li>{{ sickness }}</li>
+  </ul>
+  <button type="submit" class="btn btn-primary" [disabled]="addDogForm.invalid">הוסף כלב</button>
+</form>
+
