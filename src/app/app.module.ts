@@ -1,20 +1,26 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {LoginComponent} from './login/login.component';
-import {SignupComponent} from "./signup/signup.component";
-import {EditUserComponent} from "./edit-user/edit-user.component";
+import { TreatmentsComponent } from './components/treatments/treatments.component';
+import {LoginComponent} from "./components/login/login.component";
+import {SignupComponent} from "./components/signup/signup.component";
+import {EditUserComponent} from "./components/edit-user/edit-user.component";
+import {AboutComponent} from "./components/about/about.component";
+import {
+  HealthcareProfessionalsComponent
+} from "./components/healthcare-professionals/healthcare-professionals.component";
 import {CommonModule} from "@angular/common";
-import { FormsModule } from '@angular/forms';
-import { AdminPageComponent } from './admin/admin.component';
-import {AllDogsComponent} from "./all-dogs/all-dogs.component";
-import {DrivesComponent} from "./drives/drives.component";
-import {AdoptionComponent} from "./adoption/adoption.component";
-import { MatchmakeFormComponent } from './matchmake-form/matchmake-form.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import {ToastrModule} from "ngx-toastr";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {MatInputModule} from "@angular/material/input";
+import {MatDialogModule} from "@angular/material/dialog";
+import { DrugSearchComponent } from './components/drug-search/drug-search.component';
+import { DrugDetailsDialogComponent } from './components/drug-details-dialog/drug-details-dialog.component';
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -22,12 +28,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     LoginComponent,
     SignupComponent,
     EditUserComponent,
-    AllDogsComponent,
-    AdoptionComponent,
-    AdminPageComponent,
-    DrivesComponent,
-    MatchmakeFormComponent,
-    DashboardComponent
+    AboutComponent,
+    HealthcareProfessionalsComponent,
+    TreatmentsComponent,
+    DrugSearchComponent,
+    DrugDetailsDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     CommonModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
+    MatAutocompleteModule,
+    MatInputModule,
+    MatDialogModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,56 +1,28 @@
 @import '~bootstrap/dist/css/bootstrap.css';
 
-@font-face {
-  font-family: 'AmaticSC-Regular';
-  src: url('/assets/AmaticSC-Regular.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'OpenSans-Medium';
-  src: url('/assets/open-sans-medium.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-div, button {
-  margin-top: 0.5%;
-  margin-bottom: 0.5%;
-  font-family: 'OpenSans-Medium', sans-serif;
-}
-
-.btn {
-  margin-left: 0.5%;
-}
-
 body {
   font-family: Arial, sans-serif;
-  color: white;
-  background-color: black;
+  background-color: #DDB6AC;
 }
 
-dashboard:root {
-  --primary-color: #d8b830;
-  --secondary-color: #f8b830;
-}
-
-dashboard.navbar {
-  background-color: black;
-  color: white;
+nav {
+  background-color: #C6EFDD;
 }
 
 .nav-link {
-  color: white;
+  color: black;
 }
 
 .nav-link:hover {
-  background-color: #c86830;
+  background-color: #C6EFEF;
 }
 
 .nav-link.active {
   background-color: #f8b830;
+}
+
+button {
+  margin: 0.5%;
 }
 
 .container {
@@ -58,33 +30,14 @@ dashboard.navbar {
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
-label {
-  font-weight: bold;
-}
-
-input[type="text"],
-input[type="number"],
-input[type="email"],
-select,
-textarea {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-input[type="checkbox"] {
-  margin-right: 5px;
-}
-
-.text-danger {
+.danger {
   color: red;
 }
 
-dashboard.card {
+card {
   border: 1px solid #ccc;
   border-radius: 4px;
   color:black;
@@ -104,33 +57,25 @@ dashboard.card {
   margin-bottom: 5px;
 }
 
-.headline {
+.head {
   font-size: 72px;
   font-weight: bold;
-  color: white;
-  margin-bottom: 20px;
 }
 
-h2, h3 {
-  color: #f8b830 !important;
-  font-family: 'AmaticSC-Regular', sans-serif;
+h1, h2, h3 {
   font-weight: bolder;
 }
 
-h1 {
-  font-family: 'AmaticSC-Regular', sans-serif;
-  font-weight: bolder;
+input {
+  width: 100%;
+  border: 1px solid #ccd;
+  border-radius: 5px;
+  padding: 7px;
 }
 
 .btn {
   margin-right: 5px;
 }
 
-.dog-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 50%;
-  max-width: 123px;
-  max-height: 123px;
-}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

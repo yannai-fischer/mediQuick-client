@@ -1,25 +1,23 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {LoginComponent} from './login/login.component';
-import {SignupComponent} from './signup/signup.component';
-import {EditUserComponent} from "./edit-user/edit-user.component";
-import {AdminPageComponent} from "./admin/admin.component";
-import {DrivesComponent} from "./drives/drives.component";
-import {AllDogsComponent} from "./all-dogs/all-dogs.component";
-import {AdoptionComponent} from "./adoption/adoption.component";
-import {MatchmakeFormComponent} from "./matchmake-form/matchmake-form.component";
-import {DashboardComponent} from "./dashboard/dashboard.component";
+import {LoginComponent} from "./components/login/login.component";
+import {SignupComponent} from "./components/signup/signup.component";
+import {EditUserComponent} from "./components/edit-user/edit-user.component";
+import {
+  HealthcareProfessionalsComponent
+} from "./components/healthcare-professionals/healthcare-professionals.component";
+import {AboutComponent} from "./components/about/about.component";
+import {TreatmentsComponent} from "./components/treatments/treatments.component";
+import {DrugSearchComponent} from "./components/drug-search/drug-search.component";
 
-const routes: Routes = [
+export const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignupComponent},
-  {path: 'admin', component: AdminPageComponent},
-  {path: 'drives', component: DrivesComponent},
   {path: 'edit-user', component: EditUserComponent},
-  {path: 'all-dogs', component: AllDogsComponent},
-  {path: 'adoption', component: AdoptionComponent},
-  {path: 'matchmake-form', component: MatchmakeFormComponent},
-  {path: 'dashboard', component: DashboardComponent},
+  {path: 'healthcare-professionals', component: HealthcareProfessionalsComponent},
+  {path: 'treatments', component: TreatmentsComponent},
+  {path: 'drug-search', component: DrugSearchComponent},
+  {path: 'about', component: AboutComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full'}
 ];
 

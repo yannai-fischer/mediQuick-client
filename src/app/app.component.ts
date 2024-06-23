@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {UserService} from "../services/user.service";
-import {User} from "../utils/interfaces";
+import {ApiService} from "../services/service";
+import {User} from "./components/models/models";
+
+
 
 @Component({
   selector: 'app-root',
@@ -8,21 +10,16 @@ import {User} from "../utils/interfaces";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  isLoggedIn:boolean;
   user!: User;
 
-  constructor(private userService: UserService) {
-    this.isLoggedIn = false;
+  constructor(private service: ApiService) {
   }
 
   ngOnInit(): void {
-    this.userService.userObservable$.subscribe((user: User) => {
-      this.isLoggedIn = !!user?.id;
-      return this.user = user;
-    });
+    this.service.userSubject.subscribe((user: User) => this.user = user);
   }
 
   logOut(): void{
-    this.userService.logout();
+    this.service.logout();
   }
 }

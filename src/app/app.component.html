@@ -1,49 +1,34 @@
-<div class="name">
-  <div class="container">
-    <div class="row">
+<div class="app">
+  <div class="mediQuick">
     <img src="assets/logo.jpeg" alt="" class="logo">
-    <h1 class="headline">חברים לחיים</h1>
-    </div>
+    <h1 class="head">mediQuick</h1>
+    <div class="hello">Hello {{ user.firstName }}!</div>
   </div>
-</div>
-<div class="container mt-3">
-  <div>שלום {{ user.firstName }}</div>
-  <nav *ngIf="isLoggedIn" class="navbar navbar-expand-lg navbar-light">
+  <nav *ngIf="user.id > 0" class="navbar navbar-expand-lg navbar-light">
     <div class="collapse navbar-collapse">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/admin" routerLinkActive="active" *ngIf="user?.isAdmin">דף מנהל</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">דאשבורד</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/edit-user" routerLinkActive="active">עריכת משתמש</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/drives" routerLinkActive="active">נסיעות</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/adoption" routerLinkActive="active">צור בקשת אימוץ</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/matchmake-form" routerLinkActive="active">מצא התאמה</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/all-dogs" routerLinkActive="active">כל הכלבים</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/login" routerLinkActive="active" (click)="logOut()">התנתק</a>
-        </li>
-      </ul>
-      <div *ngIf="!isLoggedIn">
+      <nav class="nav">
+        <ul class="links">
+          <a class="nav-link" routerLink="/edit-user" routerLinkActive="active">My User</a>
+          <a class="nav-link" routerLink="/healthcare-professionals" routerLinkActive="active">Healthcare Professionals</a>
+          <a class="nav-link" routerLink="/treatments" routerLinkActive="active">Treatments</a>
+          <a class="nav-link" routerLink="/drug-search" routerLinkActive="active">Drug Search</a>
+          <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+          <a class="nav-link" (click)="logOut()">Log Out</a>
+        </ul>
+      </nav>
+      <div *ngIf="user.id === 0">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/login">התחברות</a>
+            <a class="nav-link" routerLink="/login">Login</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <router-outlet></router-outlet>
+  <div class="container mt-3">
+    <router-outlet></router-outlet>
+  </div>
 </div>
+<footer class="footer">
+  mediQuick © 2024
+</footer>
